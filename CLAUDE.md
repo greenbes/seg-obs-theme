@@ -49,3 +49,12 @@ To test theme changes:
 2. Restart Obsidian or refresh theme in Settings > Appearance > Themes
 3. Test in both Live Preview and Reading modes
 4. Verify compatibility with various Obsidian features (code blocks, tables, links, etc.)
+
+## Version Notes
+
+- I am using Obsidian version 1.18.10
+
+## Paths and Locations
+
+- My Obsidian vault is located in `/Users/stevengreenberg/obsidian/SEG Notes/`
+- Other custom themes are installed in `/Users/stevengreenberg/obsidian/SEG Notes/.obsidian/themes/`
