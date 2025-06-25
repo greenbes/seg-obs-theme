@@ -33,12 +33,12 @@ A dark theme for [Obsidian](https://obsidian.md) based on the popular Dracula co
 
 1. Download the theme files from this repository
 2. Open Obsidian Settings
-3. Go to Appearance ’ Themes
+3. Go to Appearance ï¿½ Themes
 4. Click on "Open themes folder" button
 5. Create a new folder called `seg-modified-dracula`
 6. Copy `manifest.json` and `theme.css` into this folder
 7. Restart Obsidian
-8. Go to Settings ’ Appearance ’ Themes
+8. Go to Settings ï¿½ Appearance ï¿½ Themes
 9. Select "SEG Modified Dracula" from the dropdown
 
 ### Obsidian Community Themes
@@ -78,7 +78,7 @@ This theme is released under the MIT License. The original Dracula theme is crea
 ## Author
 
 - Modified by: SEG
-- GitLab: [https://github.com/greenbes](https://github.com/greenbes)
+- GitHub: [https://github.com/greenbes](https://github.com/greenbes)
 
 ## Acknowledgments
 
