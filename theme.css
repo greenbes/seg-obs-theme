@@ -1,5 +1,49 @@
+/* SEG Modified Dracula Theme
+   Based on Dracula Theme: https://draculatheme.com/
+   Modified by: SEG (https://gitlab.com/greenbes)
+   Version: 0.0.1
+*/
+
 .theme-dark,
 .theme-light{
+
+  /* ======================================== */
+  /* SEG CUSTOM VARIABLES FOR EASY TWEAKING   */
+  /* ======================================== */
+  
+  /* Primary Dracula Colors */
+  --seg-dracula-bg: #282a36;
+  --seg-dracula-current-line: #44475a;
+  --seg-dracula-selection: #44475a;
+  --seg-dracula-fg: #f8f8f2;
+  --seg-dracula-comment: #6272a4;
+  --seg-dracula-cyan: #8be9fd;
+  --seg-dracula-green: #50fa7b;
+  --seg-dracula-orange: #ffb86c;
+  --seg-dracula-pink: #ff79c6;
+  --seg-dracula-purple: #bd93f9;
+  --seg-dracula-red: #ff5555;
+  --seg-dracula-yellow: #f1fa8c;
+
+  /* Theme Spacing */
+  --seg-content-padding: 8%;
+  --seg-content-padding-single: 10%;
+  --seg-embed-padding: 8px;
+  
+  /* Theme Borders */
+  --seg-code-border-color: #525660;
+  --seg-code-border-radius: 4px;
+  --seg-table-border-width: 1px;
+  
+  /* Theme Effects */
+  --seg-link-italic: italic;
+  --seg-blockquote-italic: italic;
+  --seg-checkbox-shadow: 0 0 0.1em;
+  --seg-highlight-shadow: 0 0 0.5em;
+
+  /* ======================================== */
+  /* OBSIDIAN STANDARD VARIABLES              */
+  /* ======================================== */
 
   /* Obsidian "Dark" import so light mode looks the same*/
   --color-scheme: dark;
@@ -52,18 +96,18 @@
   --pdf-thumbnail-shadow: 0 0 0 1px var(--background-modifier-border);
 
   /* Actual Dracula colors*/
-  --background-primary: #282a36;
-  --background-primary-alt: #44475a;
+  --background-primary: var(--seg-dracula-bg);
+  --background-primary-alt: var(--seg-dracula-current-line);
   --background-secondary: #1a1e24;
-  --background-secondary-alt: #282a36;
-  --text-normal: #f8f8f2;
-  --text-on-accent: #282a36;
-  --text-title-h1: #bd93f9;
-  --text-title-h2: #ffb86c;
-  --text-title-h3: #50fa7b;
-  --text-title-h4: #ff5555;
-  --text-title-h5: #f1fa8c;
-  --text-title-h6: #bd93f4;
+  --background-secondary-alt: var(--seg-dracula-bg);
+  --text-normal: var(--seg-dracula-fg);
+  --text-on-accent: var(--seg-dracula-bg);
+  --text-title-h1: var(--seg-dracula-purple);
+  --text-title-h2: var(--seg-dracula-orange);
+  --text-title-h3: var(--seg-dracula-green);
+  --text-title-h4: var(--seg-dracula-red);
+  --text-title-h5: var(--seg-dracula-yellow);
+  --text-title-h6: var(--seg-dracula-purple);
   --canvas-color-1: 255,  85,  85;
   --canvas-color-2: 255, 184, 108;
   --canvas-color-3: 241, 250, 140;
@@ -72,28 +116,28 @@
   --canvas-color-6: 189, 147, 244;
   --text-link: var(--text-accent);
   --markup-code: #ffb86c;
-  --text-tag: #50fa7b;
-  --text-a: #ff79c6;
-  --text-a-hover: #ff79c0;
-  --text-mark: #f1fa8c;
-  --interactive-accent: #50fa7b;
+  --text-tag: var(--seg-dracula-green);
+  --text-a: var(--seg-dracula-pink);
+  --text-a-hover: var(--seg-dracula-pink);
+  --text-mark: var(--seg-dracula-yellow);
+  --interactive-accent: var(--seg-dracula-green);
   --blockquote-border: #b294bb;
-  --interactive-accent-rgb: #f1fa8c;
+  --interactive-accent-rgb: 80, 250, 123;
   --accent-h: 135;
   --accent-s: 94%;
   --accent-l: 65%;
 
   /* Dracula Code view*/
-  --code-normal: #F8F8F2;
+  --code-normal: var(--seg-dracula-fg);
   --code-background: #3f3f3f;
-  --dracula-foreground: #F8F8F2;
-  --dracula-Comment: #6272A4;
-  --dracula-keyword: #FF79C6;
-  --dracula-definition: #50FA7B;
-  --dracula-variable: #F8F8F2; /*"variable" tags are used everywhere in code, but Dracula usually only uses orange color only for declaration inputs, thus white is less annoying to look at*/
-  --dracula-number: #BD93F9;
-  --dracula-function: #8BE9FD;
-  --dracula-string: #F1FA8C;
+  --dracula-foreground: var(--seg-dracula-fg);
+  --dracula-comment: var(--seg-dracula-comment);
+  --dracula-keyword: var(--seg-dracula-pink);
+  --dracula-definition: var(--seg-dracula-green);
+  --dracula-variable: var(--seg-dracula-fg); /*"variable" tags are used everywhere in code, but Dracula usually only uses orange color only for declaration inputs, thus white is less annoying to look at*/
+  --dracula-number: var(--seg-dracula-purple);
+  --dracula-function: var(--seg-dracula-cyan);
+  --dracula-string: var(--seg-dracula-yellow);
 }
 
 /* LINKS & BRACKETS */
@@ -118,7 +162,7 @@
 /* make external links italics to differentiate */
 
 a:not(.internal-link) {
-  font-style: italic;
+  font-style: var(--seg-link-italic);
 }
 
 /* horizontal line in preview */
@@ -270,28 +314,87 @@ code {
   color: var(--dracula-foreground);
 }
 
-.token.function {
+/* Enhanced syntax highlighting for more languages */
+.token.function,
+.token.function-name {
   color: var(--dracula-definition);
 }
 
-.token.operator {
+.token.operator,
+.token.punctuation {
   color: var(--dracula-keyword);
 }
 
-.token.number {
+.token.number,
+.token.constant,
+.token.symbol {
   color: var(--dracula-number);
 }
 
-.token.builtin {
+.token.builtin,
+.token.class-name,
+.token.constructor {
   color: var(--dracula-function);
 }
 
-.token.boolean {
+.token.boolean,
+.token.null,
+.token.undefined {
   color: var(--dracula-number);
 }
 
-.token.string {
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex {
   color: var(--dracula-string);
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--dracula-comment);
+  font-style: italic;
+}
+
+.token.keyword,
+.token.control,
+.token.directive,
+.token.unit {
+  color: var(--dracula-keyword);
+}
+
+.token.property,
+.token.tag,
+.token.entity,
+.token.url {
+  color: var(--dracula-definition);
+}
+
+.token.variable,
+.token.parameter,
+.token.attr-name {
+  color: var(--seg-dracula-orange);
+}
+
+.token.selector,
+.token.important,
+.token.atrule {
+  color: var(--seg-dracula-pink);
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.deleted {
+  color: var(--seg-dracula-red);
+  text-decoration: line-through;
+}
+
+.token.inserted {
+  color: var(--seg-dracula-green);
 }
 
 /* Editor CodeBlock TEXT Appearance - */
@@ -337,14 +440,14 @@ code {
 
 .cm-quote {
   color: var(--interactive-accent) !important;
-  font-style: italic;
+  font-style: var(--seg-blockquote-italic);
 }
 
 /* preview */
 
 blockquote {
   color: var(--interactive-accent) !important;
-  font-style: italic;
+  font-style: var(--seg-blockquote-italic);
   border-color: var(--blockquote-border) !important;
 }
 
@@ -866,4 +969,148 @@ ol {
   .markdown-rendered code {
       color: #BABABA !important;
   }
+}
+
+/* ======================================== */
+/* PLUGIN SUPPORT                           */
+/* ======================================== */
+
+/* Calendar Plugin */
+#calendar-container {
+  --color-dot: var(--seg-dracula-green);
+  --color-arrow: var(--seg-dracula-comment);
+  --color-button: var(--seg-dracula-comment);
+  --color-text-title: var(--seg-dracula-fg);
+  --color-text-heading: var(--seg-dracula-purple);
+  --color-text-day: var(--seg-dracula-fg);
+  --color-text-today: var(--seg-dracula-green);
+  --color-background-day-active: var(--seg-dracula-current-line);
+  --color-background-day-hover: var(--seg-dracula-selection);
+}
+
+.day.today {
+  color: var(--seg-dracula-green) !important;
+  font-weight: bold;
+}
+
+.day.active {
+  background-color: var(--seg-dracula-current-line) !important;
+  color: var(--seg-dracula-fg) !important;
+}
+
+/* Kanban Plugin */
+.kanban-plugin {
+  background-color: var(--background-secondary);
+}
+
+.kanban-plugin__board {
+  background-color: transparent;
+}
+
+.kanban-plugin__lane {
+  background-color: var(--background-secondary-alt);
+  border: 1px solid var(--seg-dracula-current-line);
+}
+
+.kanban-plugin__lane-header-title {
+  color: var(--seg-dracula-purple);
+  font-weight: bold;
+}
+
+.kanban-plugin__item {
+  background-color: var(--background-primary);
+  border: 1px solid var(--seg-dracula-current-line);
+}
+
+.kanban-plugin__item-title {
+  color: var(--text-normal);
+}
+
+.kanban-plugin__item:hover {
+  background-color: var(--seg-dracula-current-line);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Sliding Panes Plugin */
+.mod-root.workspace-split.mod-vertical > div:nth-child(10n-8) {
+  left: calc(var(--sticky-left) * 0);
+}
+
+.mod-root.workspace-split.mod-vertical > div:nth-child(10n-7) {
+  left: calc(var(--sticky-left) * 1);
+}
+
+.workspace .mod-root .workspace-leaf {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Dataview Plugin */
+.dataview {
+  color: var(--text-normal);
+}
+
+.dataview.table-view-table {
+  background-color: transparent;
+}
+
+.dataview.table-view-table > thead > tr > th {
+  background-color: var(--seg-dracula-current-line);
+  color: var(--seg-dracula-purple);
+  border: 1px solid var(--background-primary-alt);
+}
+
+.dataview.table-view-table > tbody > tr:hover {
+  background-color: var(--seg-dracula-selection);
+}
+
+/* Outliner Plugin */
+.outliner-plugin-bls {
+  color: var(--seg-dracula-comment);
+}
+
+.outliner-plugin-bls:hover {
+  color: var(--seg-dracula-green);
+}
+
+/* Excalidraw Plugin */
+.excalidraw {
+  --color-primary: var(--seg-dracula-purple);
+  --color-primary-darker: var(--seg-dracula-purple);
+  --color-primary-darkest: var(--seg-dracula-purple);
+  --color-primary-light: var(--seg-dracula-purple);
+}
+
+.excalidraw .App-menu {
+  background-color: var(--background-secondary-alt);
+}
+
+/* Breadcrumbs Plugin */
+.BC-trail {
+  background-color: var(--background-secondary-alt);
+  border: 1px solid var(--seg-dracula-current-line);
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.BC-trail-path {
+  color: var(--seg-dracula-comment);
+}
+
+.BC-trail-path:hover {
+  color: var(--seg-dracula-green);
+}
+
+/* Templater Plugin */
+.templater-cursor {
+  background-color: var(--seg-dracula-green);
+}
+
+/* Advanced Tables Plugin */
+.table-editor-menu {
+  background-color: var(--background-secondary-alt);
+  border: 1px solid var(--seg-dracula-current-line);
+}
+
+.table-editor-menu button:hover {
+  background-color: var(--seg-dracula-current-line);
 }
