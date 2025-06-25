@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is an Obsidian theme based on the Dracula color scheme with custom modifications. The theme is designed to provide enhanced readability and aesthetics for Obsidian users who prefer dark themes.
+This is the segdrac Obsidian theme based on the Dracula color scheme with custom modifications. The theme is designed to provide enhanced readability and aesthetics for Obsidian users who prefer dark themes.
 
 ## File Structure
 
@@ -58,3 +58,11 @@ To test theme changes:
 
 - My Obsidian vault is located in `/Users/stevengreenberg/obsidian/SEG Notes/`
 - Other custom themes are installed in `/Users/stevengreenberg/obsidian/SEG Notes/.obsidian/themes/`
+
+## CLI Tools
+
+- `jo` is a command line tool that will construct JSON structures. Documentation is available at `https://github.com/jpmens/jo/blob/master/jo.md`
+
+## Known Limitations and Quirks
+
+- The "name" key in manifest.json must exactly match the name of the directory

@@ -1,4 +1,4 @@
-# SEG Modified Dracula Theme for Obsidian
+# segdrac Theme for Obsidian
 
 A dark theme for [Obsidian](https://obsidian.md) based on the popular Dracula color scheme with custom modifications for enhanced readability and aesthetics.
 
