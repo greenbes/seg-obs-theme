@@ -78,7 +78,7 @@ This theme is released under the MIT License. The original Dracula theme is crea
 ## Author
 
 - Modified by: SEG
-- GitLab: [https://gitlab.com/greenbes](https://gitlab.com/greenbes)
+- GitLab: [https://github.com/greenbes](https://github.com/greenbes)
 
 ## Acknowledgments
 
