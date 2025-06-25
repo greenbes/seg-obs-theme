@@ -39,7 +39,7 @@ A dark theme for [Obsidian](https://obsidian.md) based on the popular Dracula co
 6. Copy `manifest.json` and `theme.css` into this folder
 7. Restart Obsidian
 8. Go to Settings � Appearance � Themes
-9. Select "SEG Modified Dracula" from the dropdown
+9. Select "segdrac" from the dropdown
 
 ### Obsidian Community Themes
 
