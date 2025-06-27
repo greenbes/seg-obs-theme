@@ -38,8 +38,10 @@
   --seg-table-border-width: 1px;
   
   /* Theme Effects */
-  --seg-link-italic: italic;
-  --seg-blockquote-italic: italic;
+  --seg-internal-link-font-style: normal;
+  --seg-external-link-font-style: italic; 
+  --seg-blockquote-font-style: normal;  
+  --seg-blockquote-text-color: var(--seg-dracula-yellow);
   --seg-checkbox-shadow: 0 0 0.1em;
   --seg-highlight-shadow: 0 0 0.5em;
 
@@ -164,7 +166,7 @@
 /* make external links italics to differentiate */
 
 a:not(.internal-link) {
-  font-style: var(--seg-link-italic);
+  font-style: var(--seg-external-link-font-style);
 }
 
 /* horizontal line in preview */
@@ -492,14 +494,14 @@ code {
 
 .cm-quote {
   color: var(--interactive-accent) !important;
-  font-style: var(--seg-blockquote-italic);
+  font-style: var(--seg-blockquote-font-style);
 }
 
 /* preview */
 
 blockquote {
   color: var(--interactive-accent) !important;
-  font-style: var(--seg-blockquote-italic);
+  font-style: var(--seg-blockquote-font-style);
   border-color: var(--blockquote-border) !important;
 }
 
