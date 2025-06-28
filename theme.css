@@ -24,11 +24,13 @@
   --seg-dracula-purple: #bd93f9;
   --seg-dracula-red: #ff5555;
   --seg-dracula-yellow: #f1fa8c;
+  --seg-dracula-yellow-muted: #5a5a4a;
+  --seg-dracula-embed-bg: #2e3039;
 
   /* Theme Spacing */
   --seg-content-padding: 8%;
   --seg-content-padding-single: 10%;
-  --seg-embed-padding: 8px;
+  --seg-embed-padding: 0;
   
   /* Theme Borders */
   --seg-code-border-color: #525660;
@@ -182,28 +184,57 @@ hr {
   border-color: var(--text-normal);
 }
 
+/* ========================================
+   EMBEDDED CONTENT STYLES
+   ======================================== */
+
 .markdown-embed {
-  padding-left: 8px !important;
-  padding-right: 4px !important;
-  margin-left: 8px !important;
-  margin-right: 4px !important;
+  padding: 0 !important;
+  padding-left: 12px !important;
+  margin: 0 !important;
+  border-left: 3px solid var(--seg-dracula-purple);
+  border-radius: var(--seg-code-border-radius);
+  background-color: var(--seg-dracula-embed-bg);
+  transition: all 0.2s ease;
+  --embed-padding: 0 0 0 12px !important;
 }
 
-/* internal embedded link rendering in preview */
-
-.markdown-embed-title {
-  color: var(--text-link);
+.markdown-embed:hover {
+  border-left-color: var(--seg-dracula-pink);
+  background-color: var(--seg-dracula-selection);
+  box-shadow: 0 2px 8px rgba(189, 147, 249, 0.1);
 }
 
-
-/* NAKED EMBEDS*/
-
-/* But keeping Border and Scroll! */
-
+/* NAKED EMBEDS - Hide titles but keep content styled */
 .markdown-embed-title {
   display: none;
 }
 
+/* Remove spacing from embedded content */
+.markdown-embed .el-p,
+.internal-embed .el-p,
+.markdown-embed p {
+  margin: 0 !important;
+  padding: 0 !important;
+  text-indent: 0 !important;
+}
+
+/* Override any default paragraph spacing in embeds */
+.markdown-embed p,
+.markdown-embed div,
+.internal-embed p,
+.internal-embed div {
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
+  margin-inline-start: 0 !important;
+  margin-inline-end: 0 !important;
+  padding-block-start: 0 !important;
+  padding-block-end: 0 !important;
+  padding-inline-start: 0 !important;
+  padding-inline-end: 0 !important;
+}
+
+/* Ensure first and last children have no extra spacing */
 .markdown-preview-view .markdown-embed-content > :first-child {
   margin-top: 0;
 }
@@ -212,14 +243,35 @@ hr {
   margin-bottom: 0;
 }
 
-
+/* Embed link styling */
 .markdown-embed-link {
-  color: var(--text-a) !important;
-  right: 2px !important;
+  color: var(--seg-dracula-comment) !important;
+  right: 4px !important;
+  top: 4px !important;
+  opacity: 0.6;
+  transition: all 0.2s ease;
 }
 
 .markdown-embed-link:hover {
-  color: var(--text-link) !important;
+  color: var(--seg-dracula-cyan) !important;
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Special styling for different embed types */
+.markdown-embed[src*=".png"], 
+.markdown-embed[src*=".jpg"], 
+.markdown-embed[src*=".jpeg"], 
+.markdown-embed[src*=".gif"] {
+  border-left-color: var(--seg-dracula-green);
+}
+
+.markdown-embed[src*=".md"] {
+  border-left-color: var(--seg-dracula-cyan);
+}
+
+.markdown-embed[src*="#"] {
+  border-left-color: var(--seg-dracula-yellow-muted);
 }
 
 /* NO FILE OPEN PAGE*/
