@@ -46,3 +46,7 @@ build/
 dev-screenshots/
 *.psd
 *.ai
+*.png
+*.jpg
+*.jpeg
+
